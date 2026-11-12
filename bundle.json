@@ -30,13 +30,16 @@
                 "cangjie_ark_interop",
                 "hiviewdfx_cangjie_wrapper",
                 "ability_cangjie_wrapper",
-                "call_manager"
+                "call_manager",
+                "core_service"
             ]
         },
         "build": {
             "sub_component": [
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony:ohos.telephony",
                 "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/call:ohos.telephony.call",
+                "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/radio:ohos.telephony.radio",
+                "//base/telephony/telephony_cangjie_wrapper/ohos/telephony/sim:ohos.telephony.sim",
                 "//base/telephony/telephony_cangjie_wrapper/kit/TelephonyKit:kit.TelephonyKit"
             ],
             "inner_kits": [

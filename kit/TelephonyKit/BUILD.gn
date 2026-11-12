@@ -21,6 +21,8 @@ ohos_cangjie_shared_library("kit.TelephonyKit") {
 
   cj_deps = [
     "../../ohos/telephony/call:ohos.telephony.call",
+    "../../ohos/telephony/radio:ohos.telephony.radio",
+    "../../ohos/telephony/sim:ohos.telephony.sim",
   ]
 
   subsystem_name = "telephony"
