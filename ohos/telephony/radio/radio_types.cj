@@ -159,7 +159,7 @@ public enum RadioTechnology {
     ]
     RadioTechnologyNr
     | ...
-    static func fromNative(value: Int32): RadioTechnology {
+    protected static func fromNative(value: Int32): RadioTechnology {
         match (value) {
             case 0 => RadioTechnologyUnknown
             case 1 => RadioTechnologyGsm
@@ -258,7 +258,7 @@ public enum NetworkType {
     ]
     NetworkTypeNr
     | ...
-    static func fromNative(value: Int32): NetworkType {
+    protected static func fromNative(value: Int32): NetworkType {
         match (value) {
             case 0 => NetworkTypeUnknown
             case 1 => NetworkTypeGsm
@@ -322,7 +322,7 @@ public enum RegState {
     ]
     RegStatePowerOff
     | ...
-    static func fromNative(value: Int32): RegState {
+    protected static func fromNative(value: Int32): RegState {
         match (value) {
             case 0 => RegStateNoService
             case 1 => RegStateInService
@@ -402,7 +402,7 @@ public enum NsaState {
     ]
     NsaStateSaAttached
     | ...
-    static func fromNative(value: Int32): NsaState {
+    protected static func fromNative(value: Int32): NsaState {
         match (value) {
             case 1 => NsaStateNotSupport
             case 2 => NsaStateNoDetect
@@ -514,7 +514,7 @@ public class NetworkRadioTech {
 public class SignalInformation {
     private let signalInformationImpl: SignalInformationImpl
 
-    init(signalType: NetworkType, signalLevel: Int32, dBm: Int32) {
+    protected init(signalType: NetworkType, signalLevel: Int32, dBm: Int32) {
         this.signalInformationImpl = SignalInformationImpl(signalType, signalLevel, dBm)
     }
 
@@ -566,7 +566,7 @@ public class SignalInformation {
 public class NetworkState {
     private let networkStateImpl: NetworkStateImpl
 
-    init(longOperatorName: String, shortOperatorName: String, plmnNumeric: String, isRoaming: Bool, regState: RegState, cfgTech: RadioTechnology, nsaState: NsaState, isCaActive: Bool, isEmergency: Bool) {
+    protected init(longOperatorName: String, shortOperatorName: String, plmnNumeric: String, isRoaming: Bool, regState: RegState, cfgTech: RadioTechnology, nsaState: NsaState, isCaActive: Bool, isEmergency: Bool) {
         this.networkStateImpl = NetworkStateImpl(
             longOperatorName, shortOperatorName, plmnNumeric, isRoaming,
             regState, cfgTech, nsaState, isCaActive, isEmergency)
