@@ -24,14 +24,14 @@ import ohos.telephony.sim.{CardType, SimState}
 foreign {
     func FfiTelephonyObserverOnCCallStateChange(options: CObserverOptions, funcId: Int64): Int32
     func FfiTelephonyObserverOffCCallStateChange(funcId: Int64): Int32
-    func FfiTelephonyObserverOnNetworkStateChangeV2(options: CObserverOptions, funcId: Int64): Int32
-    func FfiTelephonyObserverOffNetworkStateChangeV2(funcId: Int64): Int32
-    func FfiTelephonyObserverOnSignalInfoChangeV2(options: CObserverOptions, funcId: Int64): Int32
-    func FfiTelephonyObserverOffSignalInfoChangeV2(funcId: Int64): Int32
-    func FfiTelephonyObserverOnSimStateChangeV2(options: CObserverOptions, funcId: Int64): Int32
-    func FfiTelephonyObserverOffSimStateChangeV2(funcId: Int64): Int32
-    func FfiTelephonyObserverOnIccAccountInfoChangeWithOptions(options: CObserverOptions, funcId: Int64): Int32
-    func FfiTelephonyObserverOffIccAccountInfoChangeV2(funcId: Int64): Int32
+    func FfiTelephonyObserverSubscribeNetworkStateChange(options: CObserverOptions, funcId: Int64): Int32
+    func FfiTelephonyObserverUnsubscribeNetworkStateChange(funcId: Int64): Int32
+    func FfiTelephonyObserverSubscribeSignalInfoChange(options: CObserverOptions, funcId: Int64): Int32
+    func FfiTelephonyObserverUnsubscribeSignalInfoChange(funcId: Int64): Int32
+    func FfiTelephonyObserverSubscribeSimStateChange(options: CObserverOptions, funcId: Int64): Int32
+    func FfiTelephonyObserverUnsubscribeSimStateChange(funcId: Int64): Int32
+    func FfiTelephonyObserverSubscribeIccAccountInfoChange(options: CObserverOptions, funcId: Int64): Int32
+    func FfiTelephonyObserverUnsubscribeIccAccountInfoChange(funcId: Int64): Int32
 }
 
 @C
