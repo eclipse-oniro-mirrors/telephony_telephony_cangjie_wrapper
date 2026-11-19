@@ -106,10 +106,10 @@ private func nativeObserverOn(event: String, slotId: Int32, id: Int64): Int32 {
         let options = CObserverOptions(slotId)
         match (event) {
             case "CallStateChange" => FfiTelephonyObserverOnCCallStateChange(options, id)
-            case "NetworkStateChange" => FfiTelephonyObserverOnNetworkStateChangeV2(options, id)
-            case "SignalInfoChange" => FfiTelephonyObserverOnSignalInfoChangeV2(options, id)
-            case "SimStateChange" => FfiTelephonyObserverOnSimStateChangeV2(options, id)
-            case "IccAccountInfoChange" => FfiTelephonyObserverOnIccAccountInfoChangeWithOptions(options, id)
+            case "NetworkStateChange" => FfiTelephonyObserverSubscribeNetworkStateChange(options, id)
+            case "SignalInfoChange" => FfiTelephonyObserverSubscribeSignalInfoChange(options, id)
+            case "SimStateChange" => FfiTelephonyObserverSubscribeSimStateChange(options, id)
+            case "IccAccountInfoChange" => FfiTelephonyObserverSubscribeIccAccountInfoChange(options, id)
             case _ => 8300001
         }
     }
@@ -119,10 +119,10 @@ private func nativeObserverOff(event: String, id: Int64): Int32 {
     unsafe {
         match (event) {
             case "CallStateChange" => FfiTelephonyObserverOffCCallStateChange(id)
-            case "NetworkStateChange" => FfiTelephonyObserverOffNetworkStateChangeV2(id)
-            case "SignalInfoChange" => FfiTelephonyObserverOffSignalInfoChangeV2(id)
-            case "SimStateChange" => FfiTelephonyObserverOffSimStateChangeV2(id)
-            case "IccAccountInfoChange" => FfiTelephonyObserverOffIccAccountInfoChangeV2(id)
+            case "NetworkStateChange" => FfiTelephonyObserverUnsubscribeNetworkStateChange(id)
+            case "SignalInfoChange" => FfiTelephonyObserverUnsubscribeSignalInfoChange(id)
+            case "SimStateChange" => FfiTelephonyObserverUnsubscribeSimStateChange(id)
+            case "IccAccountInfoChange" => FfiTelephonyObserverUnsubscribeIccAccountInfoChange(id)
             case _ => 8300001
         }
     }
